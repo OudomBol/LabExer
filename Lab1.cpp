@@ -1,26 +1,31 @@
-//accept radius of circle
-//print the area and circumference
-//written by Oudom Bol
-//Lab 1
+//accept 3 numbers
+//display sum, product, average
 
-#include <iostream>   //preprocessor directive
+#include <iostream>
+using namespace std;
+int main ()
+{
+    int a;
+    int b;
+    int c;
+    int sum;
+    int product;
+    int average;
 
-using namespace std ; //which namespace to use
+    cout << "Enter First Number: ";
+    cin >> a;
+    cout << "Enter Second Number: ";
+    cin >> b;
+    cout << "Enter Thirt Number: ";
+    cin >> c;
 
-int main ()           //beginning of a function
+    sum = a+b+c;
+    product = a*b*c;
+    average = (a+b+c)/3;
 
-{   //beginning of a block
-    float r, area, circumference, pi;    //declare all variable as float since pi is 3.14
-                                    
-    cout << "Enter radius: ";   //ask user to enter a number
-    cin >> r;                   //accept a radius
+    cout <<"The sum of "<<a<<", "<<b<<", and "<<c<<" is "<<sum<<"."<<endl;
+    cout <<"The product of "<<a<<", "<<b<<", and "<<c<<" is "<<product<<"."<<endl;
+    cout <<"The average of "<<a<<", "<<b<<", and "<<c<<" is "<<average<<"."<<endl;
 
-    pi = 3.14;                   //give pi value;
-    area = pi*r*r ;              //give formula for area, cant use "^" 
-    circumference = 2*pi*r ;     //give formula for circumference
-
-    cout << "The area of the circle is: " <<area<< endl;                    //print area 
-    cout << "The circumference of the circle is: " <<circumference<< endl;  //print circumference
-
-    return 0;   //send 0 back to operating system
-}   //end of block
+    return 0;
+}
