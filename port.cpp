@@ -2,6 +2,9 @@
 using namespace std;          //which namespace to use
 
 //ASSUME THEY HAVEN’T TAKEN ANY RAPID TEST
+ //Press sth to start again (loop?). Press sth to end. ?
+ //If you need to start over, refresh the page and start again. ?
+
 
 //DONT HAVE INVALID INPUT YET: DONE
 //no loop yet 
@@ -140,27 +143,35 @@ void presstocont()
 //the main function
 int main()
 {    
-//introduction();    //calling the introduction menu function
-
-//input name into array
-//display name below
  
-//  char name[100];
-//  cout << "\n Enter you name: ";
-//  cin.get(name,100);      //to read and display an entire line entered by user, cin.get(string_name, size)
-//  cout << "\n Hello "<< name << ". Please answer some questions below: "<<endl;
+ introduction();    //calling the introduction menu function
 
- char choice;
- 
-//  cout << "\n ***** BEFORE WE GET STARTED ***** "; 
-//  advisor();                                           //calling function that gives advice 
-//  presstocont();
-
- //Press sth to start again (loop?). Press sth to end. ?
- //If you need to start over, refresh the page and start again. ?
+ cout << "\n ***** BEFORE WE GET STARTED ***** "; 
+ advisor();                                           //calling function that gives advice 
+ presstocont();
 
 // while (toupper(choice) != 'X')
 // {
+
+//start switch from here
+while(1)
+{
+ char choice;
+ int option;
+
+ cout << "\n ***** LET'S GET STARTED ***** "; 
+ cout<<"\n [1] to Start the Program \n";
+ cout<<" [0] to Exit the Program \n";
+ cout<<"\n Your Choice: ";
+ cin>>option;
+
+ switch (option)
+ {
+   case 0:
+   cout << "\n ***** Thank you for using this program ***** ";
+   return 0;
+
+   case 1: 
  cout << "\n Have you taken the recommeded dose of COVID-19 vaccine? ";
  askuserinputyn();                                     //calling the function that ask user for yes or no
  cin >> choice;                                        //for user to input their choice
@@ -175,8 +186,7 @@ int main()
      {
           result();                     
           lifethreateningsymptoms();      //call function: that recommends what they should do if they have life-threatening symptoms
-          //testing
-          return main();
+
      }
 
      else if (toupper(choice) == 'N')
@@ -415,7 +425,14 @@ int main()
  {
      invalidin();
  }
-//}
+ break;
+
+  default:
+  cout << "\n";
+  cout <<"\t INVALID INPUT ! PLEASE ENTER THE RIGHT NUMBER \n";
+
+ }
+}
 
 
 
@@ -427,6 +444,28 @@ int main()
      return 0;               //send 0 back to OS
 
 } // end of main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
