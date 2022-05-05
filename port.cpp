@@ -1,10 +1,6 @@
 #include <iostream>
 using namespace std;          //which namespace to use
 
-//ASSUME THEY HAVEN’T TAKEN ANY RAPID TEST
-
-
-
 //these are functions used
 void introduction()
 {
@@ -95,6 +91,7 @@ void invalidin()
 void nocontactnosymptoms()    //for people that didn't make contact with an infected person and got no symptoms
 {
      cout << "\n Sounds like you are feeling ok. You can stop stressing about it. "<<endl;
+     cout << "But you should still wear a mask, practice social distancing and wash your hands frequently." <<endl;
 }
 
 void notsureandnosymptoms()     //for people that are not sure they made contact with an infected person and got no symptoms
@@ -124,24 +121,23 @@ void result()
      cout << "\n ***** YOUR RESULT ***** "<<endl;
 }
 
-
-
 //the main function
 int main()
 {    
  
-//  introduction();    //calling the introduction menu function
+ introduction();    //calling the introduction menu function
 
-//  cout << "\n ***** BEFORE WE GET STARTED ***** "; 
-//  advisor();                                           //calling function that gives advice 
-//  presstocont();
+ cout << "\n ***** BEFORE WE GET STARTED ***** "; 
+ advisor();                                           //calling function that gives advice 
+ presstocont();
 
 
 //start switch from here
 while(1)       //infinite while loop 
 {
- string sympt[10] = {" - Fever ", " - Cough/Sore throat ", " - Fatigue ", " - Loss of taste or smell ", 
+ string sympt[7] = {" - Fever ", " - Cough/Sore throat ", " - Fatigue ", " - Loss of taste or smell ", 
                     " - Difficulty breathing ", " - Runny nose ", " - Headache "};
+                    
  char choice;
  int option;
 
@@ -297,11 +293,10 @@ while(1)       //infinite while loop
 
                if(toupper(choice) == 'Y')   
                {
-                    result();
                     printSymptoms(sympt, 7);
                     askuserinputyn();
                     cin>>choice;
-                      cin.ignore();
+                     cin.ignore(); //error
 
                     if (toupper(choice) == 'Y')  
                     {
